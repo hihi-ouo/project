@@ -703,7 +703,6 @@ async def rating(interaction: discord.Interaction, background: discord.Attachmen
 
     await interaction.response.defer()
 
-        # 如果有上傳新背景就儲存
     if background is not None:
         bg_path = f"bg_{interaction.user.id}.jpg"
         bg_data = await background.read()
@@ -711,7 +710,6 @@ async def rating(interaction: discord.Interaction, background: discord.Attachmen
             f.write(bg_data)
         cred_manager.save_background(interaction.user.id, bg_path)
     else:
-        # 用上次儲存的背景，沒有的話用預設
         bg_path = cred_manager.load_background(interaction.user.id)
 
     try:
@@ -728,7 +726,6 @@ async def rating(interaction: discord.Interaction, background: discord.Attachmen
 async def on_ready():
     await tree.sync()
     print(f"機器人已上線：{bot.user}")
-    print(f"已同步 {len(tree.get_commands())} 個指令")
 
 
 if __name__ == "__main__":
