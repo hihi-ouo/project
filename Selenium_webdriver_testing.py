@@ -8,7 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-
 def find(by, value):
     return wait.until(EC.element_to_be_clickable((by, value)))
 
@@ -21,9 +20,7 @@ path = (
     "https://lng-tgk-aime-gw.am-all.net/common_auth/login?"
     "site_id=maimaidxex&redirect_url=https://maimaidx-eng.com/"
     "maimai-mobile/&back_url=https://maimai.sega.com/"
-
 )
-
 driver.get(path)
 
 wait = WebDriverWait(driver, 10)
@@ -36,5 +33,4 @@ find(By.NAME, "password").send_keys(password)
 find(By.XPATH, "//button[@class='c-button--login js-agreeSubmit']").click()
 
 time.sleep(8)
-
 driver.quit()

@@ -45,12 +45,7 @@ find(By.CSS_SELECTOR, 'a[href="https://maimaidx-eng.com/maimai-mobile/record/"][
 find(By.CSS_SELECTOR, 'a[href="https://maimaidx-eng.com/maimai-mobile/record/musicGenre/"][class="p_r d_ib"]').click()
 find(By.CSS_SELECTOR, 'button[value="3"][class="p_r m_2 f_0"]').click()
 
-time.sleep(2)
-
 rows = driver.find_elements(By.CSS_SELECTOR, ".m_15")
-print(f"找到 {len(rows)} 個元素")
-
-
 
 results = []
 current_genre = ""
