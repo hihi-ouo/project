@@ -1,18 +1,21 @@
 import discord
 from discord import app_commands
 import asyncio
+import os
 
 from credentials import CredentialManager
 from data import MaimaiData
 from client import MaimaiClient
 from image_generator import MaimaiImageGenerator
-TOKEN = "MTQ5MDY2NDkwNzEwMjc0ODc0Mw.GFUSh1.xoOZ9nmkb3-YZkjSKCFjTnRRguaGL9fK1_U60I"
+from dotenv import load_dotenv
+
 
 # =====================
 # Discord 機器人
 # =====================
 cred_manager = CredentialManager()
-
+load_dotenv()
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 #建立機器人
 intents = discord.Intents.default()
