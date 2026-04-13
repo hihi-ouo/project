@@ -17,6 +17,7 @@ cred_manager = CredentialManager()
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
+
 #建立機器人
 intents = discord.Intents.default()
 intents.message_content = True
